@@ -4,7 +4,11 @@ import java.util.*
 import kotlin.collections.ArrayList
 
 class World(var width: Int, var height: Int) {
-    private val board: Array<Array<Cell?>>
+    private val board: Array<Array<Cell?>> = Array(width) {
+        arrayOfNulls(
+            height
+        )
+    }
 
     private fun init() {
         for (i in 0 until width) {
@@ -49,8 +53,7 @@ class World(var width: Int, var height: Int) {
                 }
 
                 // rule 2 & rule 4
-                if (cell.alive && (nbNeighbours == 3 || nbNeighbours == 2)
-                    ||
+                if (cell.alive && (nbNeighbours == 3 || nbNeighbours == 2) ||
                     !cell.alive && nbNeighbours == 3
                 ) {
                     liveCells.add(cell)
@@ -72,11 +75,6 @@ class World(var width: Int, var height: Int) {
     }
 
     init {
-        board = Array(width) {
-            arrayOfNulls(
-                height
-            )
-        }
         init()
     }
 }

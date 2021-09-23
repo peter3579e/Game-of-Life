@@ -37,12 +37,12 @@ class GameOfLifeView(context: Context?, attrs: AttributeSet?) : SurfaceView(cont
             // Pause of 300 ms to better visualize the evolution of the world
             try {
                 Thread.sleep(300)
+                val canvas: Canvas = holder.lockCanvas()
+                world!!.nextGeneration()
+                drawCells(canvas)
+                holder.unlockCanvasAndPost(canvas)
             } catch (e: InterruptedException) {
             }
-            val canvas: Canvas = holder.lockCanvas()
-            world!!.nextGeneration()
-            drawCells(canvas)
-            holder.unlockCanvasAndPost(canvas)
         }
     }
 
