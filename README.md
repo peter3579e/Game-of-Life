@@ -41,7 +41,7 @@ if (cell.alive && (nbNeighbours == 3 || nbNeighbours == 2) ||
        liveCells.add(cell)
    }
 ```
-4. For the custom View, I decided to extend SurfaceView class and implement runnable interface for the evolution of World. The difference between surfaceView and CostumeView: https://medium.com/mobile-app-development-publication/surface-view-vs-view-the-differences-b8ad7808dc3c
+4. For the custom View, I decided to extend SurfaceView class and implement runnable interface for the evolution of World. The difference between surfaceView and normal View: https://medium.com/mobile-app-development-publication/surface-view-vs-view-the-differences-b8ad7808dc3c
 
 ### To make the game interesting
 User are able to drag and select a block of live cels and replace to other positon, to evolve different possibility of evolution.
